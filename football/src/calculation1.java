@@ -24,6 +24,7 @@ public class calculation1 {
         System.out.print("Please give the Arc Ability:");
         double Arc = scanner.nextDouble();
         System.out.print("Please give the Speed Ability:");
+        double Speed = scanner.nextDouble();
         System.out.print("Please give the Accelerating Ability:");
         double Accelerateing = scanner.nextDouble();
         System.out.print("Please give the  + BodyControl Ability:");
@@ -33,8 +34,7 @@ public class calculation1 {
         double Play1Ability = AbilityCalculate(GroundPassing,AerialPassing,Shooting,Heading,Jumping,OfeensiveAwareness,BallControl,Dribbling,Arc,Speed,Accelerateing,BodyContact,BodyControl);
         System.out.print("The player's ability is" + Play1Ability );}
         public static double AbilityCalculate(double GroundPassing,double AerialPassing,double Shooting,double Heading,double Jumping,double OfeensiveAwareness,double BallControl,double Dribbling,double Arc, double Speed,double Accelerateing,double BodyContact,double BodyControl){
-            return GroundPassing*0.05 + AerialPassing*0.05 + Shooting*0.2 + Heading*0.1 + 
-        }
+            return GroundPassing*0.05 + AerialPassing*0.05 + Shooting*0.2 + Heading*0.1 + Jumping*0.1 + OfeensiveAwareness*0.2 + BallControl*0.15 + Dribbling*0.15 + Arc*0.1 + Speed*0.15 + Accelerateing*0.15 + BodyContact*0.15 + BallControl*0.15;
 
 
 
