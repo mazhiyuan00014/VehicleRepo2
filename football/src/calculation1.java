@@ -4,7 +4,7 @@ public class calculation1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Please give the name:");
-        int Name = scanner.nextInt();
+        String Name = scanner.nextLine();
         System.out.print("Please give the GroundPassing Ability:");
         double GroundPassing = scanner.nextDouble();
         System.out.print("Please give the AerialPassing Ability:");
