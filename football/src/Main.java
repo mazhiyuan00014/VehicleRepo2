@@ -11,6 +11,7 @@ public class Main {
             String Foward= "Foward";
             String Midfield = "Midfield";
             String Defender = "Defender";
+
             System.out.print("Please give the position of the palyer ( Foward or Midfield or Defender ):");
             String position = scanner.nextLine();
 
@@ -44,7 +45,7 @@ public class Main {
             double BodyContact = scanner.nextDouble();
             System.out.print("Please give the BodyControl Ability:");
             double BodyControl = scanner.nextDouble();
-            double ability = calculation3.AbilityCalculate(GroundPassing,AerialPassing,Shooting,Heading,Jumping,OffeensiveAwareness,BallControl,Dribbling,Arc,Speed,Accelerateing,BodyContact,BodyControl);
+            double ability = calculation1.AbilityCalculate(GroundPassing,AerialPassing,Shooting,Heading,Jumping,OffeensiveAwareness,BallControl,Dribbling,Arc,Speed,Accelerateing,BodyContact,BodyControl);
             System.out.print("The player" + Name + "ability is" + ability );}
 
             else if(position.equals(Midfield)){
@@ -77,7 +78,12 @@ public class Main {
                 double BodyContact = scanner.nextDouble();
                 System.out.print("Please give the BodyControl Ability:");
                 double BodyControl = scanner.nextDouble();
-                double ability = calculation3.AbilityCalculate(GroundPassing,AerialPassing,Shooting,Heading,Jumping,OffeensiveAwareness,BallControl,Dribbling,Arc,Speed,Accelerateing,BodyContact,BodyControl);
+                System.out.print("Please give the DefensiveAwareness Ability:");
+                double DefensiveAwareness = scanner.nextDouble();
+                System.out.print("Please give the SlideTackle Ability:");
+                double SlideTackle = scanner.nextDouble();
+
+                double ability = calculation2.AbilityCalculate(GroundPassing,AerialPassing,Shooting,Heading,Jumping,OffeensiveAwareness,BallControl,Dribbling,Arc,Speed,Accelerateing,BodyContact,BodyControl,DefensiveAwareness,SlideTackle);
                 System.out.print("The player" + Name + "ability is" + ability );
 
             }
@@ -89,14 +95,14 @@ public class Main {
                 double GroundPassing = scanner.nextDouble();
                 System.out.print("Please give the AerialPassing Ability:");
                 double AerialPassing = scanner.nextDouble();
-                System.out.print("Please give the Shooting Ability:");
-                double Shooting = scanner.nextDouble();
                 System.out.print("Please give the Heading Ability:");
                 double Heading = scanner.nextDouble();
                 System.out.print("Please give the Jumping Ability:");
                 double Jumping = scanner.nextDouble();
-                System.out.print("Please give the OffensiveAwareness Ability:");
-                double OffeensiveAwareness = scanner.nextDouble();
+                System.out.print("Please give the DefensiveAwareness Ability:");
+                double DefensiveAwareness = scanner.nextDouble();
+                System.out.print("Please give the SlideTackle Ability");
+                double SlideTackle = scanner.nextDouble();
                 System.out.print("Please give the BallContol Ability:");
                 double BallControl = scanner.nextDouble();
                 System.out.print("Please give the Dribbling Ability:");
@@ -111,7 +117,7 @@ public class Main {
                 double BodyContact = scanner.nextDouble();
                 System.out.print("Please give the BodyControl Ability:");
                 double BodyControl = scanner.nextDouble();
-                double ability = calculation3.AbilityCalculate(GroundPassing,AerialPassing,Shooting,Heading,Jumping,OffeensiveAwareness,BallControl,Dribbling,Arc,Speed,Accelerateing,BodyContact,BodyControl);
+                double ability = calculation3.AbilityCalculate(GroundPassing,AerialPassing,Heading,Jumping,DefensiveAwareness,SlideTackle,BallControl,Dribbling,Arc,Speed,Accelerateing,BodyContact,BodyControl);
                 System.out.print("The player" + Name + "ability is" + ability );
             }
 
