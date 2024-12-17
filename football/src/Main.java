@@ -6,21 +6,23 @@ public class Main {
     public static void main(String[] args) {
         //TIP 当文本光标位于高亮显示的文本处时按 <shortcut actionId="ShowIntentionActions"/>
         // 查看 IntelliJ IDEA 建议如何修正。
-        System.out.print("Hello and welcome!" + "\n" +"You can calculate the ability of the player and change it in some conditons here" + "\n");
-            Scanner scanner = new Scanner(System.in);
-            String Foward= "Foward";
-            String Midfield = "Midfield";
-            String Defender = "Defender";
+        System.out.print("Hello and welcome!" + "\n" + "You can calculate the ability of the player and change it in some conditons here" + "\n");
+        Scanner scanner = new Scanner(System.in);
+        String Foward = "Foward";
+        String Midfield = "Midfield";
+        String Defender = "Defender";
+        String Yes = "Yes";
+        String No = "No";
 
-            double[] PlayerNumber;
-            System.out.print("How many players'abilities do you want to set up?");
-            int numbers = scanner.nextInt();
-            PlayerNumber = new double[numbers];
+        double[] PlayerNumber;
+        System.out.print("How many players'abilities do you want to set up?");
+        int numbers = scanner.nextInt();
+        PlayerNumber = new double[numbers];
 
-            int i = 0;
-            while (i < numbers){
+        int i = 0;
+        while (i < numbers) {
 
-            System.out.print("Please give the position of the palyer ( Foward or Midfield or Defender ):");
+            System.out.print("Please give the position of the palyer ( Foward or Midfield or Defender ):" + "\n");
             String position = scanner.nextLine();
 
             if (position.equals(Foward)) {
@@ -49,12 +51,12 @@ public class Main {
                 double Speed = scanner.nextDouble();
                 System.out.print("Please give the Accelerating Ability:");
                 double Accelerateing = scanner.nextDouble();
-                System.out.print("Please give the  BodyConract Ability:");
+                System.out.print("Please give the BodyConract Ability:");
                 double BodyContact = scanner.nextDouble();
                 System.out.print("Please give the BodyControl Ability:");
                 double BodyControl = scanner.nextDouble();
                 double ability = calculation1.AbilityCalculate(GroundPassing, AerialPassing, Shooting, Heading, Jumping, OffeensiveAwareness, BallControl, Dribbling, Arc, Speed, Accelerateing, BodyContact, BodyControl);
-                System.out.print("The player" + Name + "ability is" + ability);
+                System.out.print(" The player " + Name + " ability is " + ability);
                 PlayerNumber[i] = ability;
                 i++;
             }//end of if
@@ -95,7 +97,7 @@ public class Main {
                 double SlideTackle = scanner.nextDouble();
 
                 double ability = calculation2.AbilityCalculate(GroundPassing, AerialPassing, Shooting, Heading, Jumping, OffeensiveAwareness, BallControl, Dribbling, Arc, Speed, Accelerateing, BodyContact, BodyControl, DefensiveAwareness, SlideTackle);
-                System.out.print("The player" + Name + "ability is" + ability);
+                System.out.print(" The player " + Name + " ability is " + ability);
                 PlayerNumber[i] = ability;
                 i++;
 
@@ -131,16 +133,53 @@ public class Main {
                 System.out.print("Please give the BodyControl Ability:");
                 double BodyControl = scanner.nextDouble();
                 double ability = calculation3.AbilityCalculate(GroundPassing, AerialPassing, Heading, Jumping, DefensiveAwareness, SlideTackle, BallControl, Dribbling, Arc, Speed, Accelerateing, BodyContact, BodyControl);
-                System.out.print("The player" + Name + "ability is" + ability );
+                System.out.print(" The player " + Name + " ability is " + ability);
                 PlayerNumber[i] = ability;
                 i++;
             }//end of else if
         }//end of while
-                for(int q=0; q<numbers;q++){
-                    System.out.println("\n" + PlayerNumber[q]);
+        for (int q = 0; q < numbers; q++) {
+            int m = q + 1;
+            System.out.print("\n" + "The Player" + m + "'s ability is" + PlayerNumber[q]);
+
+        }
+        String h  = scanner.nextLine();
+        System.out.print(h);//To avoid the Bug of Java
+        if(numbers>1) {
+            System.out.print("\n" + "Do you want to compare the player's ability?(Yes or No):");
+            String opinion = scanner.nextLine();
+            if (opinion.equals(Yes)) {
+                System.out.print("Which two players do you want to compare?(Please give the playernumber):");
+                int o = scanner.nextInt();
+                int p = scanner.nextInt();
+                if (PlayerNumber[o - 1] > PlayerNumber[p - 1]) {
+                    System.out.println("Player" + o + "is better" + "\n" + PlayerNumber[o - 1]);
+                } else if (PlayerNumber[o - 1] == PlayerNumber[p - 1]) {
+                    System.out.println("Player" + p + " is better" + "\n" + PlayerNumber[p - 1]);
+                } else if (PlayerNumber[o - 1] < PlayerNumber[p - 1]) {
+                    System.out.println("The two players' ability is equivalent" + "\n" + PlayerNumber[o - 1] + "\n" + PlayerNumber[p - 1]);
                 }
+            } else if (opinion.equals(No)) {
+                System.out.print("All right,this 'Compare'part is over");
+
+            }
+        }//end of if
+        else if (numbers<2){
+            System.out.print("You only set up one player's ability,so there is no need to compare");
+
+        }
+
+        System.out.print("\n" + "It's over.Thank you for the using");
+        int k = scanner.nextInt();
+        for (int j= 0;j < 6;j++){
+            System.out.print(k);
+        }
 
 
-    }
 
-}
+    }//end of main
+
+
+
+
+    }//end of Class Main
