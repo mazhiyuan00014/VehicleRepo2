@@ -12,43 +12,18 @@ public class Main {
             String Midfield = "Midfield";
             String Defender = "Defender";
 
+            double[] PlayerNumber;
+            System.out.print("How many players'abilities do you want to set up?");
+            int numbers = scanner.nextInt();
+            PlayerNumber = new double[numbers];
+
+            int i = 0;
+            while (i < numbers){
+
             System.out.print("Please give the position of the palyer ( Foward or Midfield or Defender ):");
             String position = scanner.nextLine();
 
-            if(position.equals(Foward)){
-
-            System.out.print("Please give the name:");
-            String Name = scanner.nextLine();
-            System.out.print("Please give the GroundPassing Ability:");
-            double GroundPassing = scanner.nextDouble();
-            System.out.print("Please give the AerialPassing Ability:");
-            double AerialPassing = scanner.nextDouble();
-            System.out.print("Please give the Shooting Ability:");
-            double Shooting = scanner.nextDouble();
-            System.out.print("Please give the Heading Ability:");
-            double Heading = scanner.nextDouble();
-            System.out.print("Please give the Jumping Ability:");
-            double Jumping = scanner.nextDouble();
-            System.out.print("Please give the OffensiveAwareness Ability:");
-            double OffeensiveAwareness = scanner.nextDouble();
-            System.out.print("Please give the BallContol Ability:");
-            double BallControl = scanner.nextDouble();
-            System.out.print("Please give the Dribbling Ability:");
-            double Dribbling = scanner.nextDouble();
-            System.out.print("Please give the Arc Ability:");
-            double Arc = scanner.nextDouble();
-            System.out.print("Please give the Speed Ability:");
-            double Speed = scanner.nextDouble();
-            System.out.print("Please give the Accelerating Ability:");
-            double Accelerateing = scanner.nextDouble();
-            System.out.print("Please give the  + BodyControl Ability:");
-            double BodyContact = scanner.nextDouble();
-            System.out.print("Please give the BodyControl Ability:");
-            double BodyControl = scanner.nextDouble();
-            double ability = calculation1.AbilityCalculate(GroundPassing,AerialPassing,Shooting,Heading,Jumping,OffeensiveAwareness,BallControl,Dribbling,Arc,Speed,Accelerateing,BodyContact,BodyControl);
-            System.out.print("The player" + Name + "ability is" + ability );}
-
-            else if(position.equals(Midfield)){
+            if (position.equals(Foward)) {
 
                 System.out.print("Please give the name:");
                 String Name = scanner.nextLine();
@@ -74,7 +49,43 @@ public class Main {
                 double Speed = scanner.nextDouble();
                 System.out.print("Please give the Accelerating Ability:");
                 double Accelerateing = scanner.nextDouble();
-                System.out.print("Please give the  + BodyControl Ability:");
+                System.out.print("Please give the  BodyConract Ability:");
+                double BodyContact = scanner.nextDouble();
+                System.out.print("Please give the BodyControl Ability:");
+                double BodyControl = scanner.nextDouble();
+                double ability = calculation1.AbilityCalculate(GroundPassing, AerialPassing, Shooting, Heading, Jumping, OffeensiveAwareness, BallControl, Dribbling, Arc, Speed, Accelerateing, BodyContact, BodyControl);
+                System.out.print("The player" + Name + "ability is" + ability);
+                PlayerNumber[i] = ability;
+                i++;
+            }//end of if
+
+            else if (position.equals(Midfield)) {
+
+                System.out.print("Please give the name:");
+                String Name = scanner.nextLine();
+                System.out.print("Please give the GroundPassing Ability:");
+                double GroundPassing = scanner.nextDouble();
+                System.out.print("Please give the AerialPassing Ability:");
+                double AerialPassing = scanner.nextDouble();
+                System.out.print("Please give the Shooting Ability:");
+                double Shooting = scanner.nextDouble();
+                System.out.print("Please give the Heading Ability:");
+                double Heading = scanner.nextDouble();
+                System.out.print("Please give the Jumping Ability:");
+                double Jumping = scanner.nextDouble();
+                System.out.print("Please give the OffensiveAwareness Ability:");
+                double OffeensiveAwareness = scanner.nextDouble();
+                System.out.print("Please give the BallContol Ability:");
+                double BallControl = scanner.nextDouble();
+                System.out.print("Please give the Dribbling Ability:");
+                double Dribbling = scanner.nextDouble();
+                System.out.print("Please give the Arc Ability:");
+                double Arc = scanner.nextDouble();
+                System.out.print("Please give the Speed Ability:");
+                double Speed = scanner.nextDouble();
+                System.out.print("Please give the Accelerating Ability:");
+                double Accelerateing = scanner.nextDouble();
+                System.out.print("Please give the BodyContact Ability:");
                 double BodyContact = scanner.nextDouble();
                 System.out.print("Please give the BodyControl Ability:");
                 double BodyControl = scanner.nextDouble();
@@ -83,11 +94,13 @@ public class Main {
                 System.out.print("Please give the SlideTackle Ability:");
                 double SlideTackle = scanner.nextDouble();
 
-                double ability = calculation2.AbilityCalculate(GroundPassing,AerialPassing,Shooting,Heading,Jumping,OffeensiveAwareness,BallControl,Dribbling,Arc,Speed,Accelerateing,BodyContact,BodyControl,DefensiveAwareness,SlideTackle);
-                System.out.print("The player" + Name + "ability is" + ability );
+                double ability = calculation2.AbilityCalculate(GroundPassing, AerialPassing, Shooting, Heading, Jumping, OffeensiveAwareness, BallControl, Dribbling, Arc, Speed, Accelerateing, BodyContact, BodyControl, DefensiveAwareness, SlideTackle);
+                System.out.print("The player" + Name + "ability is" + ability);
+                PlayerNumber[i] = ability;
+                i++;
 
-            }
-            else if(position.equals(Defender)){
+            }//end of else if
+            else if (position.equals(Defender)) {
 
                 System.out.print("Please give the name:");
                 String Name = scanner.nextLine();
@@ -113,14 +126,19 @@ public class Main {
                 double Speed = scanner.nextDouble();
                 System.out.print("Please give the Accelerating Ability:");
                 double Accelerateing = scanner.nextDouble();
-                System.out.print("Please give the  + BodyControl Ability:");
+                System.out.print("Please give the BodyContact Ability:");
                 double BodyContact = scanner.nextDouble();
                 System.out.print("Please give the BodyControl Ability:");
                 double BodyControl = scanner.nextDouble();
-                double ability = calculation3.AbilityCalculate(GroundPassing,AerialPassing,Heading,Jumping,DefensiveAwareness,SlideTackle,BallControl,Dribbling,Arc,Speed,Accelerateing,BodyContact,BodyControl);
+                double ability = calculation3.AbilityCalculate(GroundPassing, AerialPassing, Heading, Jumping, DefensiveAwareness, SlideTackle, BallControl, Dribbling, Arc, Speed, Accelerateing, BodyContact, BodyControl);
                 System.out.print("The player" + Name + "ability is" + ability );
-            }
-
+                PlayerNumber[i] = ability;
+                i++;
+            }//end of else if
+        }//end of while
+                for(int q=0; q<numbers;q++){
+                    System.out.println("\n" + PlayerNumber[q]);
+                }
 
 
     }
