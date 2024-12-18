@@ -24,7 +24,6 @@ public class calculation2 {public static void main(String[] args) {
         return GroundPassing*0.15 + AerialPassing*0.15 + Shooting*0.05 + Heading*0.05 + Jumping*0.05 + OffeensiveAwareness*0.1 + BallControl*0.15 + Dribbling*0.15 + Arc*0.1 + Speed*0.15 + Accelerateing*0.15 + BodyContact*0.125 + BodyControl*0.125 + DefensiveAwareness*0.1 + SlideTackle*0.1;
 
 
-
     }
 
 }

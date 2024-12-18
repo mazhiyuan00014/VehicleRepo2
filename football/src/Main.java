@@ -17,6 +17,12 @@ public class Main {
         String ControlBall = "Ball Control";
         String Counterattack = "Counterattack";
 
+        double[] PlayerAbility;
+        PlayerAbility = new double[20];
+
+        String[] PlayerPosition;
+        PlayerPosition = new String[20];
+
         double[] PlayerNumber;
         System.out.print("How many players'abilities do you want to set up?");
         int numbers = scanner.nextInt();
@@ -27,6 +33,7 @@ public class Main {
 
             System.out.print("Please give the position of the palyer ( Foward or Midfield or Defender ):" + "\n");
             String position = scanner.nextLine();
+            PlayerPosition[i]= position;
 
             if (position.equals(Foward)) {
 
@@ -61,6 +68,19 @@ public class Main {
                 double ability = calculation1.AbilityCalculate(GroundPassing, AerialPassing, Shooting, Heading, Jumping, OffeensiveAwareness, BallControl, Dribbling, Arc, Speed, Accelerateing, BodyContact, BodyControl);
                 System.out.print(" The player " + Name + " ability is " + ability);
                 PlayerNumber[i] = ability;
+                PlayerAbility[1]= GroundPassing;
+                PlayerAbility[2]= AerialPassing;
+                PlayerAbility[3]= Shooting;
+                PlayerAbility[4]= Heading;
+                PlayerAbility[5]= Jumping;
+                PlayerAbility[6]= OffeensiveAwareness;
+                PlayerAbility[7]= BallControl;
+                PlayerAbility[8]= Dribbling;
+                PlayerAbility[9]= Arc;
+                PlayerAbility[10]= Speed;
+                PlayerAbility[11]= Accelerateing;
+                PlayerAbility[12]= BodyContact;
+                PlayerAbility[13]= BodyControl;
                 i++;
             }//end of if
 
@@ -102,6 +122,21 @@ public class Main {
                 double ability = calculation2.AbilityCalculate(GroundPassing, AerialPassing, Shooting, Heading, Jumping, OffeensiveAwareness, BallControl, Dribbling, Arc, Speed, Accelerateing, BodyContact, BodyControl, DefensiveAwareness, SlideTackle);
                 System.out.print(" The player " + Name + " ability is " + ability);
                 PlayerNumber[i] = ability;
+                PlayerAbility[1]= GroundPassing;
+                PlayerAbility[2]= AerialPassing;
+                PlayerAbility[3]= Shooting;
+                PlayerAbility[4]= Heading;
+                PlayerAbility[5]= Jumping;
+                PlayerAbility[6]= OffeensiveAwareness;
+                PlayerAbility[7]= BallControl;
+                PlayerAbility[8]= Dribbling;
+                PlayerAbility[9]= Arc;
+                PlayerAbility[10]= Speed;
+                PlayerAbility[11]= Accelerateing;
+                PlayerAbility[12]= BodyContact;
+                PlayerAbility[13]= BodyControl;
+                PlayerAbility[14]= DefensiveAwareness;
+                PlayerAbility[15]= SlideTackle;
                 i++;
 
             }//end of else if
@@ -138,6 +173,19 @@ public class Main {
                 double ability = calculation3.AbilityCalculate(GroundPassing, AerialPassing, Heading, Jumping, DefensiveAwareness, SlideTackle, BallControl, Dribbling, Arc, Speed, Accelerateing, BodyContact, BodyControl);
                 System.out.print(" The player " + Name + " ability is " + ability);
                 PlayerNumber[i] = ability;
+                PlayerAbility[1]= GroundPassing;
+                PlayerAbility[2]= AerialPassing;
+                PlayerAbility[3]= Heading;
+                PlayerAbility[4]= Jumping;
+                PlayerAbility[5]= DefensiveAwareness;
+                PlayerAbility[6]= SlideTackle;
+                PlayerAbility[7]= BallControl;
+                PlayerAbility[8]= Dribbling;
+                PlayerAbility[9]= Arc;
+                PlayerAbility[10]= Speed;
+                PlayerAbility[11]= Accelerateing;
+                PlayerAbility[12]= BodyContact;
+                PlayerAbility[13]= BodyControl;
                 i++;
             }//end of else if
         }//end of while
@@ -173,13 +221,52 @@ public class Main {
             System.out.print("\n" + "You only set up one player's ability,so there is no need to compare");
 
         }//end of else if
-        System.out.print("/\n" + "You can set the player(s) to be Captain(Yes or No):");
-        System.out.print("Which Tactical do you want to set for the Player?(Ball Control or Counterattack):");
-        String Tactical = scanner.nextLine();
-        if( Tactical.equals(ControlBall)){
-            double Speed = Speed
+        String in  = scanner.nextLine();
+        System.out.print(in);//To avoid the Bug of Java
 
-        }
+        System.out.print("\n" + "How many players do you want to give Tactical?"+ "\n" + "(You have set "+ numbers +" playerability)");
+        int numberTactical = scanner.nextInt();
+        for(int q =0;q<numberTactical;q++) {
+            System.out.print("\n " + "Which player do you want to give the");
+            int w = scanner.nextInt();
+            System.out.print("\n" + "Which Tactical do you want to set for the Player?(Ball Control or Counterattack):");
+            String Tactical = scanner.nextLine();
+            System.out.print("\n" + "Please give the TacticalAdaptability of the player(1-100):");
+            int Tacticalability = scanner.nextInt();
+            double AddtionalWeiht = Tacticals.tactical(Tacticalability);
+            if(Tactical.equals(ControlBall)&& PlayerPosition[w-1].equals(Foward)) {
+                double abilitynow = calculation1.AbilityCalculate(PlayerAbility[1]*(1+AddtionalWeiht),PlayerAbility[2]*(1+AddtionalWeiht),PlayerAbility[3],PlayerAbility[4],PlayerAbility[5],PlayerAbility[6],PlayerAbility[7]*(1+AddtionalWeiht),PlayerAbility[8],PlayerAbility[9],PlayerAbility[10],PlayerAbility[11],PlayerAbility[12],PlayerAbility[13]);
+                System.out.print("\n" + "The ability of the player now is " + abilitynow);
+            }
+            else if(Tactical.equals(ControlBall)&& PlayerPosition[w-1].equals(Midfield)){
+                double abilitynow = calculation2.AbilityCalculate(PlayerAbility[1]*(1+AddtionalWeiht),PlayerAbility[2]*(1+AddtionalWeiht),PlayerAbility[3],PlayerAbility[4],PlayerAbility[5],PlayerAbility[6],PlayerAbility[7]*(1+AddtionalWeiht),PlayerAbility[8],PlayerAbility[9],PlayerAbility[10],PlayerAbility[11],PlayerAbility[12],PlayerAbility[13],PlayerAbility[14],PlayerAbility[15]);
+                System.out.print("\n" + "The ability of the player now is " + abilitynow);
+
+            }
+            else if(Tactical.equals(ControlBall)&& PlayerPosition[w-1].equals(Defender)) {
+                double abilitynow = calculation3.AbilityCalculate(PlayerAbility[1]*(1+AddtionalWeiht),PlayerAbility[2]*(1+AddtionalWeiht),PlayerAbility[3],PlayerAbility[4],PlayerAbility[5]*(1+AddtionalWeiht),PlayerAbility[6],PlayerAbility[7],PlayerAbility[8],PlayerAbility[9],PlayerAbility[10],PlayerAbility[11],PlayerAbility[12],PlayerAbility[13]);
+                System.out.print("\n" + "The ability of the player now is " + abilitynow);
+
+
+            }
+            else if(Tactical.equals(Counterattack)&& PlayerPosition[w-1].equals(Foward)) {
+                double abilitynow = calculation1.AbilityCalculate(PlayerAbility[1],PlayerAbility[2],PlayerAbility[3],PlayerAbility[4],PlayerAbility[5],PlayerAbility[6],PlayerAbility[7],PlayerAbility[8],PlayerAbility[9],PlayerAbility[10]*(1+AddtionalWeiht),PlayerAbility[11]*(1+AddtionalWeiht),PlayerAbility[12],PlayerAbility[13]*(1+AddtionalWeiht));
+                System.out.print("\n" + "The ability of the player now is " + abilitynow);
+
+            }
+            else if(Tactical.equals(Counterattack)&& PlayerPosition[w-1].equals(Midfield)) {
+                double abilitynow = calculation2.AbilityCalculate(PlayerAbility[1],PlayerAbility[2],PlayerAbility[3],PlayerAbility[4],PlayerAbility[5],PlayerAbility[6],PlayerAbility[7],PlayerAbility[8],PlayerAbility[9],PlayerAbility[10]*(1+AddtionalWeiht),PlayerAbility[11]*(1+AddtionalWeiht),PlayerAbility[12],PlayerAbility[13],PlayerAbility[14]*(1+AddtionalWeiht),PlayerAbility[15]);
+                System.out.print("\n" + "The ability of the player now is " + abilitynow);
+
+            }
+            else if(Tactical.equals(Counterattack)&& PlayerPosition[w-1].equals(Defender)) {
+                double abilitynow = calculation3.AbilityCalculate(PlayerAbility[1],PlayerAbility[2],PlayerAbility[3],PlayerAbility[4],PlayerAbility[5],PlayerAbility[6],PlayerAbility[7],PlayerAbility[8],PlayerAbility[9],PlayerAbility[10]*(1+AddtionalWeiht),PlayerAbility[11]*(1+AddtionalWeiht),PlayerAbility[12]*(1+AddtionalWeiht),PlayerAbility[13]);
+                System.out.print("\n" + "The ability of the player now is " + abilitynow);
+
+            }
+
+        }//end of for(tactical)
+        System.out.print("\n" + "You can set the player(s) to be Captain(Yes or No):");
 
         System.out.print("\n" + "It's over.Thank you for the using");
 
