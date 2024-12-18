@@ -17,8 +17,8 @@ public class calculation3 {
         double Accelerateing = scanner.nextDouble();
         double BodyContact = scanner.nextDouble();
         double BodyControl = scanner.nextDouble();
-        double Play1Ability = AbilityCalculate(GroundPassing,AerialPassing,Heading,Jumping,DefensiveAwareness,SlideTackle,BallControl,Dribbling,Arc,Speed,Accelerateing,BodyContact,BodyControl);
-        System.out.print("The player" + Name + "ability is" + Play1Ability );}
+        double PlayAbility = AbilityCalculate(GroundPassing,AerialPassing,Heading,Jumping,DefensiveAwareness,SlideTackle,BallControl,Dribbling,Arc,Speed,Accelerateing,BodyContact,BodyControl);
+        System.out.print("The player" + Name + "ability is" + PlayAbility );}
         public static double AbilityCalculate(double GroundPassing,double AerialPassing,double Heading,double Jumping,double DefensiveAwareness,double SlideTackle,double BallControl,double Dribbling,double Arc, double Speed,double Accelerateing,double BodyContact,double BodyControl){
         return GroundPassing*0.05 + AerialPassing*0.05 +  Heading*0.15 + Jumping*0.15 + DefensiveAwareness*0.2 + SlideTackle*0.2 + BallControl*0.1 + Dribbling*0.05 + Arc*0.05 + Speed*0.15 + Accelerateing*0.15 + BodyContact*0.2 + BodyControl*0.2;
 

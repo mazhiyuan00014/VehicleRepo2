@@ -1,3 +1,4 @@
+import javax.naming.ldap.Control;
 import java.util.Scanner;
 
 //TIP 要<b>运行</b>代码，请按 <shortcut actionId="Run"/> 或
@@ -13,6 +14,8 @@ public class Main {
         String Defender = "Defender";
         String Yes = "Yes";
         String No = "No";
+        String ControlBall = "Ball Control";
+        String Counterattack = "Counterattack";
 
         double[] PlayerNumber;
         System.out.print("How many players'abilities do you want to set up?");
@@ -138,6 +141,7 @@ public class Main {
                 i++;
             }//end of else if
         }//end of while
+
         for (int q = 0; q < numbers; q++) {
             int m = q + 1;
             System.out.print("\n" + "The Player" + m + "'s ability is" + PlayerNumber[q]);
@@ -145,6 +149,7 @@ public class Main {
         }
         String h  = scanner.nextLine();
         System.out.print(h);//To avoid the Bug of Java
+
         if(numbers>1) {
             System.out.print("\n" + "Do you want to compare the player's ability?(Yes or No):");
             String opinion = scanner.nextLine();
@@ -164,16 +169,20 @@ public class Main {
 
             }
         }//end of if
-        else if (numbers<2){
-            System.out.print("You only set up one player's ability,so there is no need to compare");
+        else if (numbers<=1){
+            System.out.print("\n" + "You only set up one player's ability,so there is no need to compare");
+
+        }//end of else if
+        System.out.print("/\n" + "You can set the player(s) to be Captain(Yes or No):");
+        System.out.print("Which Tactical do you want to set for the Player?(Ball Control or Counterattack):");
+        String Tactical = scanner.nextLine();
+        if( Tactical.equals(ControlBall)){
+            double Speed = Speed
 
         }
 
         System.out.print("\n" + "It's over.Thank you for the using");
-        int k = scanner.nextInt();
-        for (int j= 0;j < 6;j++){
-            System.out.print(k);
-        }
+
 
 
 
