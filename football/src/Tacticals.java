@@ -6,6 +6,7 @@ public class Tacticals {
     }
 
     public double getTacticalAdaptability(){
+
         return TacticalAdaptability;
     }
 
