@@ -313,10 +313,11 @@ public class Main {
         System.out.print("\n" + "How many players do you want to give Tactical?" + "\n" + "(You have set " + Number[1] + " playerability)");
         int numberTactical = scanner.nextInt();
         for (int q = 0; q < numberTactical; q++) {
-            int b =scanner.nextInt();//avoid of the bug
+
             System.out.print("\n " + "Which player do you want to give the tactical?");
             int w = scanner.nextInt();
             System.out.print("\n" + "Which Tactical do you want to set for the Player?(Ball Control or Counterattack):");
+            String b =scanner.nextLine();//avoid of the bug
             String Tactical = scanner.nextLine();
             PlayerTactical[w-1] =Tactical;
             System.out.print("\n" + "Please give the TacticalAdaptability of the player(1-100):");
@@ -568,7 +569,7 @@ public class Main {
                 PlayerName[i - 1] = PlayerName[i];
                 PlayerPosition[i-1] = PlayerPosition[i];
             }
-            PlayerAbilitynow[d-1] = PlayerAbilitynow[105];
+            PlayerAbilitynow[d-1] = PlayerAbilitynow[150];
             Number[1] = Number[1] - 1;
             System.out.print("\nYou have succeeded Deleting the Player's data");
 
