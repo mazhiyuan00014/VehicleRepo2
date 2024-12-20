@@ -74,7 +74,7 @@ public class Main {
 
         Number = new int[20];
         PlayerAbility = new double[150];
-        PlayerAbilitynow = new double[150];
+        PlayerAbilitynow = new double[20];
         PlayerPosition = new String[20];
         PlayerTactical = new String[20];
         PlayerName = new  String[20];
@@ -568,8 +568,9 @@ public class Main {
                 PlayerNumber[i - 1] = PlayerNumber[i];
                 PlayerName[i - 1] = PlayerName[i];
                 PlayerPosition[i-1] = PlayerPosition[i];
+                PlayerAbilitynow[d-1] = PlayerAbilitynow[d];
             }
-            PlayerAbilitynow[d-1] = PlayerAbilitynow[150];
+
             Number[1] = Number[1] - 1;
             System.out.print("\nYou have succeeded Deleting the Player's data");
 
